@@ -17,6 +17,9 @@
                 "secs": 10,
                 "nanos": 0
             }
+        },
+        "limits_config": {
+            "json_payload_max_size": 10485760
         }
     },
     "telemetry": {
@@ -27,8 +30,16 @@
     "network": {
         "addr": "0.0.0.0:24567",
         "external_address": "",
-        "boot_nodes": "ed25519:FA14a2NYzEtw9mP2i3i8mo58EVZtBTxbkuz9shxr71hu@35.195.32.249:24567,ed25519:AvUHGpPPbrewSp5paz3HGXb6s22fbZeq9BUoziyYaBT4@34.80.230.208:24567,ed25519:EDzprW4tkn4zdGMAj7C7x7FDtTW72HfT4bqZeikiP87c@35.202.194.133:24567,ed25519:CgmgHJCJL6ydtSptWkLMGjk1YMVFrjJDPozszvbr7tYe@34.94.132.112:24567,ed25519:CDQFcD9bHUWdc31rDfRi4ZrJczxg8derCzybcac142tK@35.196.209.192:24567,NEW_BOOT_NODES",
-        "max_peers": 40,
+        "boot_nodes": "ed25519:86EtEy7epneKyrcJwSWP7zsisTkfDRH5CFVszt4qiQYw@35.195.32.249:24567,ed25519:BFB78VTDBBfCY4jCP99zWxhXUcFAZqR22oSx2KEr8UM1@35.229.222.235:24567,ed25519:Cw1YyiX9cybvz3yZcbYdG7oDV6D7Eihdfc8eM1e1KKoh@35.195.27.104:24567,ed25519:33g3PZRdDvzdRpRpFRZLyscJdbMxUA3j3Rf2ktSYwwF8@34.94.132.112:24567,ed25519:CDQFcD9bHUWdc31rDfRi4ZrJczxg8derCzybcac142tK@35.196.209.192:24567",
+        "max_num_peers": 40,
+        "minimum_outbound_peers": 5,
+        "ideal_connections_lo": 30,
+        "ideal_connections_hi": 35,
+        "peer_recent_time_window": {
+            "secs": 600,
+            "nanos": 0
+        },
+        "safe_set_size": 20,
         "handshake_timeout": {
             "secs": 20,
             "nanos": 0
@@ -42,7 +53,15 @@
             "secs": 10800,
             "nanos": 0
         },
-        "blacklist": []
+        "blacklist": [],
+        "ttl_account_id_router": {
+            "secs": 3600,
+            "nanos": 0
+        },
+        "peer_stats_period": {
+            "secs": 5,
+            "nanos": 0
+        }
     },
     "consensus": {
         "min_num_peers": 3,
@@ -51,12 +70,12 @@
             "nanos": 100000000
         },
         "min_block_production_delay": {
-            "secs": 0,
-            "nanos": 800000000
+            "secs": 1,
+            "nanos": 100000000
         },
         "max_block_production_delay": {
             "secs": 2,
-            "nanos": 0
+            "nanos": 500000000
         },
         "max_block_wait_delay": {
             "secs": 6,
@@ -76,7 +95,7 @@
         },
         "chunk_request_retry_period": {
             "secs": 0,
-            "nanos": 200000000
+            "nanos": 400000000
         },
         "header_sync_initial_timeout": {
             "secs": 10,
@@ -90,9 +109,23 @@
             "secs": 120,
             "nanos": 0
         },
-        "header_sync_expected_height_per_second": 10
+        "header_sync_expected_height_per_second": 10,
+        "sync_check_period": {
+            "secs": 10,
+            "nanos": 0
+        },
+        "sync_step_period": {
+            "secs": 0,
+            "nanos": 10000000
+        },
+        "doomslug_step_period": {
+            "secs": 0,
+            "nanos": 100000000
+        }
     },
     "tracked_accounts": [],
     "tracked_shards": [0],
-    "archive": false
+    "archive": false,
+    "gc_blocks_limit": 2,
+    "view_client_threads": 4
 }
